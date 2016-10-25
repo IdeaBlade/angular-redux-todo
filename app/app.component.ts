@@ -4,10 +4,6 @@ import {Component} from '@angular/core';
   selector: 'my-app',
   template:
     `<h1>Angular todos with redux</h1>
-    <div>
-      <add-todo></add-todo>
-      <todo-list></todo-list>
-      <filters></filters>
-    </div>`
+    <todo-app></todo-app>`
 })
 export class AppComponent { }
