@@ -1,6 +1,6 @@
-import { ActionTypes } from './actions';
-import { Action, FilterType, State } from './app-store';
-import { Todo } from '../model';
+import { ActionTypes }      from './actions';
+import { Action, State }    from './app-store';
+import { FilterType, Todo } from '../model';
 
 const initialState = {
   todos: [] as Todo[],

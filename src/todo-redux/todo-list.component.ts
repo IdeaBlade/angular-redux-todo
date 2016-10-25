@@ -1,6 +1,7 @@
-import {Component, OnDestroy} from '@angular/core';
-import { Todo } from './model';
-import { Actions, AppStore, FilterType, Unsubscribe } from './redux';
+import { Component, OnInit, OnDestroy }   from '@angular/core';
+import { Actions, AppStore, Unsubscribe } from './redux';
+
+import { FilterType, Todo } from './model';
 
 @Component({
   selector: 'todo-list',
@@ -11,14 +12,16 @@ import { Actions, AppStore, FilterType, Unsubscribe } from './redux';
     </div>
   `
 })
-export class TodoListComponent implements OnDestroy {
+export class TodoListComponent implements OnInit, OnDestroy {
   currentFilter: FilterType;
   todos: Todo[] = [];
   unsubscribe: Unsubscribe;
 
-  constructor(private appStore: AppStore) {
-    this.unsubscribe = appStore.subscribe(() => {
-      let state = appStore.getState();
+  constructor(private appStore: AppStore) { }
+
+  ngOnInit() {
+    this.unsubscribe = this.appStore.subscribe(() => {
+      let state = this.appStore.getState();
       this.currentFilter = state.currentFilter;
       this.todos = state.todos;
     });

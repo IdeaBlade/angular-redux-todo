@@ -1,10 +1,8 @@
 import { createStore, Dispatch, Reducer, Store, Unsubscribe } from 'redux';
 export { Unsubscribe } from 'redux';
 
-import { rootReducer } from './root-reducer';
-import { Todo }        from '../model';
-
-export type FilterType = 'SHOW_ALL' | 'SHOW_ACTIVE' | 'SHOW_COMPLETED';
+import { rootReducer }      from './root-reducer';
+import { FilterType, Todo } from '../model';
 
 export interface Action {
   type: string;

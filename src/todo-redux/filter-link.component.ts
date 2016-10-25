@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Actions, AppStore, FilterType, Unsubscribe } from './redux';
+import { Actions, AppStore, Unsubscribe } from './redux';
+import { FilterType } from './model';
 
 @Component({
   selector: 'filter-link',

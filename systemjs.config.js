@@ -10,8 +10,8 @@
     },
     // map tells the System loader where to look for things
     map: {
-      // our app is within the app folder
-      app: 'app',
+      'todo-redux':   'src/todo-redux',
+      'todo-vanilla': 'src/todo-vanilla',
 
       // angular bundles
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
@@ -31,7 +31,11 @@
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
-      app: {
+      'todo-redux': {
+        main: './main.js',
+        defaultExtension: 'js'
+      },
+      'todo-vanilla': {
         main: './main.js',
         defaultExtension: 'js'
       },
@@ -40,10 +44,14 @@
       },
       
       // Barrels
-      'app/redux': {
+      'todo-redux/redux': {
         main: 'index',
         defaultExtension: 'js'
-      }
+      },
+      'todo-vanilla/services': {
+        main: 'index',
+        defaultExtension: 'js'
+      },      
     }
   });
 })(this);

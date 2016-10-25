@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   template:
     `<h1>
       <button (click)="more()">+</button>
-      Angular todos with redux
+      Angular Todos with redux
       <button (click)="less()">-</button>      
     </h1>
     <todo-app *ngFor="let app of apps"></todo-app>`

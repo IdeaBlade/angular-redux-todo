@@ -1,4 +1,4 @@
-import { FilterType } from './app-store';
+import { FilterType } from '../model';
 
 export const ActionTypes = {
   ADD_TODO:           'ADD_TODO',
@@ -18,7 +18,7 @@ export class Actions {
     return {
       type: ActionTypes.ADD_TODO,
       payload: {
-        id: this.nextToDoId++,
+        id: Actions.nextToDoId++,
         text: text,
         completed: false
       }

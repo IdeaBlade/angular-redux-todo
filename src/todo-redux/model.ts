@@ -4,3 +4,4 @@ export class Todo {
   completed: boolean;
 }
 
+export type FilterType = 'SHOW_ALL' | 'SHOW_ACTIVE' | 'SHOW_COMPLETED';

@@ -1,8 +1,14 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import { Todo }       from './model';
-import { FilterType } from './redux';
+import { Pipe, PipeTransform } from '@angular/core';
+import { FilterType, Todo }  from './model';
 
-@Pipe({ name: 'visibleTodos' })
+/**
+ * Pure pipe 
+ * Only called when immutable inputs - todos, filter -
+ * change object identity
+ */
+@Pipe({
+  name: 'visibleTodos'
+})
 export class VisibleTodosPipe implements PipeTransform {
   transform(todos: Todo[], filter: FilterType) {
     if (!todos || todos.length === 0) { return; }

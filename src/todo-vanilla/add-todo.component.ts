@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Actions, AppStore } from './redux';
+import { Component }   from '@angular/core';
+import { Todo }        from './model';
+import { TodoService } from './services';
 
 @Component({
   selector: 'add-todo',
@@ -12,12 +13,14 @@ import { Actions, AppStore } from './redux';
 export class AddTodoComponent {
   text = '';
 
-  constructor(private appStore: AppStore) { }
+  constructor(private service: TodoService) { }
 
   addTodo() {
     const text = this.text.trim();
     if (text) {
-      this.appStore.dispatch(Actions.addTodo(text));
+      const todo = new Todo();
+      todo.text = text;
+      this.service.addTodo(todo);
       this.text = '';
     }
   }
