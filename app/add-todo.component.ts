@@ -5,7 +5,7 @@ import { Actions, AppStore } from './redux';
   selector: 'add-todo',
   template:
     `<div>
-      <input [(ngModel)]='text'>
+      <input [(ngModel)]="text" (keyup.enter)="addTodo()">
       <button (click)="addTodo()">Add todo</button>
     </div>`
 })

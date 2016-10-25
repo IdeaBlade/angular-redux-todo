@@ -27,9 +27,8 @@ import { VisibleTodosPipe }    from './visible-todos-pipe';
     FilterLinkComponent,
     VisibleTodosPipe
   ],
-  providers: [
-    appStoreProvider
-  ],
+  providers: [ appStoreProvider ],
+  exports:   [ TodoAppComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
